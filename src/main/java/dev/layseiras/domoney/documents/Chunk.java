@@ -10,11 +10,11 @@ import java.util.UUID;
 @Document(collection = "chunks")
 public class Chunk {
     @Id
-    private Long id;
+    private String id;
 
     private UUID originId;
     private String activityType;
-    private Long chunkId;
+    private int chunkId;
     private String text;
 
     private List<Double> embedding;
@@ -23,7 +23,7 @@ public class Chunk {
     public Chunk() {
     }
 
-    public Chunk(Long id, UUID originId, String activityType, Long chunkId, String text, List<Double> embedding, LocalDateTime updatedAt) {
+    public Chunk(String id, UUID originId, String activityType, int chunkId, String text, List<Double> embedding, LocalDateTime updatedAt) {
         this.id = id;
         this.originId = originId;
         this.activityType = activityType;
@@ -33,11 +33,11 @@ public class Chunk {
         this.updatedAt = updatedAt;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -57,11 +57,11 @@ public class Chunk {
         this.activityType = activityType;
     }
 
-    public Long getChunkId() {
+    public int getChunkId() {
         return chunkId;
     }
 
-    public void setChunkId(Long chunkId) {
+    public void setChunkId(int chunkId) {
         this.chunkId = chunkId;
     }
 
