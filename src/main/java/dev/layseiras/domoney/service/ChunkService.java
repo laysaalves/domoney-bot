@@ -29,6 +29,10 @@ public class ChunkService {
     public void save() {
         List<ExternalApiDTO> activities = fetchService.fetch();
         for (ExternalApiDTO activity : activities) {
+
+            boolean exists = repository.existsByOriginId(activity.id());
+            if (exists) continue;
+
             List<String> chunks = generateChunks(activity);
             int index = 0;
             for (String text : chunks) {
