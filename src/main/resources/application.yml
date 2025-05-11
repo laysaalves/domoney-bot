@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: domoney-bot
+  data:
+    mongodb:
+      uri: mongodb://user:senha@localhost:27018/domoney?authSource=admin
+
+api:
+  gemini:
+    key: ${API_KEY}
+    url: ${API_URL}
+
+server:
+  port: 8081

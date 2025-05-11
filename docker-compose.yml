@@ -1,0 +1,15 @@
+services:
+  mongo:
+    container_name: domoney_mongo
+    image: mongo:4
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: senha
+      MONGO_INITDB_DATABASE: domoney
+    ports:
+      - '27018:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
