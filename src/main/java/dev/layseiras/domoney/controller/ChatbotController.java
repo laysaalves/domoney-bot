@@ -2,7 +2,7 @@ package dev.layseiras.domoney.controller;
 
 import dev.layseiras.domoney.dto.ChatbotRequest;
 import dev.layseiras.domoney.service.ChatbotService;
-import dev.layseiras.domoney.service.ChunkReadService;
+import dev.layseiras.domoney.service.chunks.ChunkReadService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
