@@ -1,4 +1,4 @@
-package dev.layseiras.domoney.service;
+package dev.layseiras.domoney.service.chunks;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.scheduling.annotation.EnableScheduling;

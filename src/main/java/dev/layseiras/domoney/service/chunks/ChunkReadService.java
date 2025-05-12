@@ -1,4 +1,4 @@
-package dev.layseiras.domoney.service;
+package dev.layseiras.domoney.service.chunks;
 
 import dev.layseiras.domoney.documents.Chunk;
 import dev.layseiras.domoney.repository.ChunkRepository;
