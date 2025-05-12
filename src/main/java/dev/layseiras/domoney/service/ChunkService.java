@@ -1,7 +1,7 @@
 package dev.layseiras.domoney.service;
 
 import dev.layseiras.domoney.documents.Chunk;
-import dev.layseiras.domoney.dto.ExternalApiDTO;
+import dev.layseiras.domoney.dto.DashboardApiDTO;
 import dev.layseiras.domoney.repository.ChunkRepository;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
@@ -14,8 +14,8 @@ public class ChunkService {
 
     private final ChunkRepository repository;
 
-    private final ExternalApiService fetchService;
-    public ChunkService(ChunkRepository repository, ExternalApiService fetchService) {
+    private final DashboardApiService fetchService;
+    public ChunkService(ChunkRepository repository, DashboardApiService fetchService) {
         this.repository = repository;
         this.fetchService = fetchService;
     }
@@ -27,8 +27,8 @@ public class ChunkService {
     }
 
     public void save() {
-        List<ExternalApiDTO> activities = fetchService.fetch();
-        for (ExternalApiDTO activity : activities) {
+        List<DashboardApiDTO> activities = fetchService.getAllActivities();
+        for (DashboardApiDTO activity : activities) {
 
             boolean exists = repository.existsByOriginId(activity.id());
             if (exists) continue;
@@ -48,7 +48,7 @@ public class ChunkService {
             }
         }
     }
-    private List<String> generateChunks(ExternalApiDTO dto) {
+    private List<String> generateChunks(DashboardApiDTO dto) {
         String text = String.format(
                 "O item de %s com o nome de %s custou %s reais e está %s via %s.",
                 dto.paymentType().toString(),

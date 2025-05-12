@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public record ExternalApiDTO
+public record DashboardApiDTO
         (UUID id,
          String title,
          BigDecimal price,
